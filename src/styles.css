@@ -54,44 +54,48 @@
 
   --shadow-soft: 0 1px 2px oklch(0.22 0.06 255 / 0.04), 0 12px 32px -14px oklch(0.22 0.06 255 / 0.22);
   --shadow-lift: 0 2px 4px oklch(0.22 0.06 255 / 0.05), 0 24px 50px -18px oklch(0.22 0.06 255 / 0.3);
-  --shadow-glow: 0 24px 70px -24px oklch(0.72 0.14 220 / 0.55);
+  --shadow-glow: 0 24px 70px -24px oklch(0.84 0.16 92 / 0.45);
 }
 
 :root {
   --radius: 0.875rem;
 
   --background: oklch(1 0 0);
-  --foreground: oklch(0.21 0.05 260);
+  --foreground: oklch(0.17 0.005 260);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.21 0.05 260);
+  --card-foreground: oklch(0.17 0.005 260);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.21 0.05 260);
+  --popover-foreground: oklch(0.17 0.005 260);
 
-  --primary: oklch(0.28 0.09 262);
-  --primary-foreground: oklch(0.99 0.005 250);
-  --secondary: oklch(0.965 0.012 240);
-  --secondary-foreground: oklch(0.28 0.09 262);
-  --muted: oklch(0.968 0.008 245);
-  --muted-foreground: oklch(0.52 0.03 255);
-  --accent: oklch(0.95 0.035 220);
-  --accent-foreground: oklch(0.28 0.09 262);
+  --primary: oklch(0.17 0.004 260);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.965 0.002 250);
+  --secondary-foreground: oklch(0.17 0.004 260);
+  --muted: oklch(0.968 0.002 250);
+  --muted-foreground: oklch(0.5 0.008 260);
+  --accent: oklch(0.95 0.06 96);
+  --accent-foreground: oklch(0.2 0.01 260);
   --destructive: oklch(0.58 0.24 27);
-  --destructive-foreground: oklch(0.99 0.005 250);
-  --border: oklch(0.92 0.012 245);
-  --input: oklch(0.92 0.012 245);
-  --ring: oklch(0.68 0.13 222);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.003 250);
+  --input: oklch(0.92 0.003 250);
+  --ring: oklch(0.82 0.16 92);
 
-  --navy: oklch(0.26 0.085 262);
-  --navy-deep: oklch(0.19 0.065 264);
-  --navy-soft: oklch(0.36 0.08 258);
-  --cyan: oklch(0.72 0.14 220);
-  --cyan-soft: oklch(0.86 0.08 216);
-  --bolt: oklch(0.87 0.18 96);
-  --bolt-foreground: oklch(0.24 0.06 262);
+  /* "navy" tokens now carry the black scale (kept for class compatibility) */
+  --navy: oklch(0.21 0.004 260);
+  --navy-deep: oklch(0.14 0.004 260);
+  --navy-soft: oklch(0.3 0.005 260);
+  /* "cyan" tokens now carry the yellow accent */
+  --cyan: oklch(0.84 0.16 92);
+  --cyan-soft: oklch(0.91 0.11 95);
+  /* electric blue detail, used sparingly */
+  --bolt: oklch(0.84 0.16 92);
+  --bolt-foreground: oklch(0.16 0.004 260);
   --whats: oklch(0.68 0.16 152);
   --whats-foreground: oklch(0.99 0.005 250);
-  --surface: oklch(0.982 0.006 240);
+  --surface: oklch(0.975 0.002 250);
 }
+
 
 @layer base {
   * {

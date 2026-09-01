@@ -511,19 +511,27 @@ function Index() {
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
                 Guarulhos e Grande São Paulo
               </li>
-              <li className="flex items-start gap-2">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
-                Seg. a sex. 07h–17h | Sáb. 07h–12h
-              </li>
             </ul>
           </div>
         </div>
 
-        <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 px-5 pt-6">
+        <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-2 border-t border-white/10 px-5 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-primary-foreground/50">
             © {new Date().getFullYear()} Leo e Leo Elétrica. Todos os direitos reservados.
           </p>
+          <p className="text-xs text-primary-foreground/40">
+            Criado com ❤️ por{" "}
+            <a
+              href="https://dufrimeunegocio.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium transition-colors hover:text-cyan"
+            >
+              Dufri — @dufrimeunegocio
+            </a>
+          </p>
         </div>
+
       </footer>
     </div>
   );

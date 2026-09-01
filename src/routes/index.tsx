@@ -357,17 +357,7 @@ function Index() {
                   <p className="text-sm text-primary-foreground/70">Guarulhos e Grande São Paulo</p>
                 </div>
               </div>
-              <div className="mt-5 flex items-start gap-3 border-t border-white/10 pt-5">
-                <Clock className="mt-0.5 h-5 w-5 shrink-0 text-cyan" aria-hidden />
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold text-primary-foreground">Horário</p>
-                  <p className="text-sm text-primary-foreground/70">
-                    Segunda a sexta: 07h às 17h
-                    <br />
-                    Sábado: 07h às 12h
-                  </p>
-                </div>
-              </div>
+
               <a
                 href={whatsappLink(mainMsg)}
                 target="_blank"

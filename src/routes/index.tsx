@@ -154,10 +154,6 @@ const faqs = [
     q: "Quais regiões vocês atendem?",
     a: "Atendemos Guarulhos e a Grande São Paulo.",
   },
-  {
-    q: "Qual é o horário de atendimento?",
-    a: "Segunda a sexta das 07h às 17h e sábado das 07h às 12h.",
-  },
 ];
 
 function Index() {

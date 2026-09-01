@@ -170,81 +170,50 @@ function Index() {
 
       <main>
         {/* HERO */}
-        <section className="relative overflow-hidden bg-navy-deep pb-20 pt-28 sm:pb-24 sm:pt-32 lg:pb-32 lg:pt-40">
+        <section className="relative overflow-hidden bg-navy-deep pb-20 pt-28 sm:pb-24 sm:pt-32 lg:pb-28 lg:pt-36">
           <div className="grid-tech absolute inset-0 opacity-60" aria-hidden />
           <div
-            className="absolute -right-32 -top-24 h-[28rem] w-[28rem] rounded-full opacity-40 blur-3xl"
+            className="absolute left-1/2 -top-40 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full opacity-25 blur-3xl"
             style={{ background: "radial-gradient(circle, var(--cyan), transparent 65%)" }}
             aria-hidden
           />
-          <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="rise-in">
+          <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 text-center">
+            <div className="rise-in flex flex-col items-center">
               <span className="inline-flex items-center gap-2 rounded-full border border-cyan/30 bg-cyan/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-cyan-soft">
                 <MapPin className="h-3.5 w-3.5" aria-hidden />
-                Guarulhos e região
+                Guarulhos e Grande São Paulo
               </span>
-              <h1 className="mt-5 text-[2.1rem] font-extrabold leading-[1.08] text-primary-foreground sm:text-5xl lg:text-[3.4rem]">
+              <h1 className="mt-6 text-[2.1rem] font-extrabold leading-[1.08] text-primary-foreground sm:text-5xl lg:text-[3.6rem]">
                 Eletricista em Guarulhos com{" "}
                 <span className="text-cyan">Atendimento Profissional</span>
               </h1>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-primary-foreground/70 sm:text-lg">
                 Serviços elétricos residenciais, comerciais e industriais com segurança, qualidade e
                 atendimento profissional.
               </p>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href={whatsappLink(mainMsg)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-whats px-6 py-4 text-base font-semibold text-whats-foreground shadow-lift transition-transform hover:-translate-y-0.5"
-                >
-                  <MessageCircle className="h-5 w-5" aria-hidden />
-                  Chamar no WhatsApp
-                </a>
-                <a
-                  href="#servicos"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-4 text-base font-semibold text-primary-foreground transition-colors hover:border-cyan hover:text-cyan"
-                >
-                  Conhecer os serviços
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </a>
-              </div>
+              <a
+                href={whatsappLink(mainMsg)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-9 inline-flex w-full items-center justify-center gap-2 rounded-full bg-cyan px-8 py-4 text-base font-bold uppercase tracking-wide text-navy-deep shadow-glow transition-transform hover:-translate-y-0.5 sm:w-auto sm:text-lg"
+              >
+                <MessageCircle className="h-5 w-5" aria-hidden />
+                Contratar eletricista
+              </a>
 
-              <dl className="mt-10 grid max-w-lg grid-cols-2 gap-x-6 gap-y-4 border-t border-white/10 pt-6 sm:grid-cols-3">
+              <dl className="mt-10 flex w-full flex-col items-center gap-x-8 gap-y-3 border-t border-white/10 pt-6 sm:flex-row sm:justify-center">
                 {["Serviço com garantia", "Preço justo", "Atendimento profissional"].map((t) => (
-                  <div key={t} className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan" aria-hidden />
-                    <dt className="text-sm text-primary-foreground/75">{t}</dt>
+                  <div key={t} className="flex items-center gap-2 whitespace-nowrap">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan" aria-hidden />
+                    <dt className="text-sm text-primary-foreground/75 sm:text-[0.9rem]">{t}</dt>
                   </div>
                 ))}
               </dl>
             </div>
-
-            <div className="relative">
-              <div className="overflow-hidden rounded-3xl border border-white/10 shadow-glow">
-                <img
-                  src={heroPanel}
-                  alt="Quadro elétrico moderno com disjuntores organizados"
-                  width={1280}
-                  height={1280}
-                  className="aspect-square w-full object-cover sm:aspect-[4/3] lg:aspect-square"
-                />
-              </div>
-              <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl border border-white/10 bg-navy px-4 py-3 shadow-lift sm:left-6">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-bolt">
-                  <Zap className="h-5 w-5 text-bolt-foreground" aria-hidden />
-                </span>
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold text-primary-foreground">Quadros e painéis</p>
-                  <p className="truncate text-xs text-primary-foreground/60">
-                    Instalação e manutenção elétrica
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
+
 
         {/* DIFERENCIAIS */}
         <section id="diferenciais" className="border-b border-border bg-surface">

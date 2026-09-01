@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 
 import logo from "@/assets/logo.png";
-import heroPanel from "@/assets/hero-panel.jpg";
+
 import lighting from "@/assets/section-lighting.jpg";
 import { Header } from "@/components/site/Header";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";

@@ -341,7 +341,7 @@ function Index() {
                 Região atendida
               </p>
               <h2 className="mt-3 text-3xl font-extrabold text-primary-foreground sm:text-4xl">
-                Guarulhos é a nossa principal região de atendimento
+                Guarulhos e Grande São Paulo
               </h2>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-primary-foreground/70">
                 Atendemos Guarulhos e também a Grande São Paulo, com deslocamento para residências,

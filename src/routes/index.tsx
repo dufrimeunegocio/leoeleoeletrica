@@ -267,15 +267,15 @@ function Index() {
 
         {/* POR QUE ESCOLHER */}
         <section className="bg-surface py-20 sm:py-24">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-2">
-            <div className="order-2 overflow-hidden rounded-3xl shadow-soft lg:order-1">
+          <div className="mx-auto grid max-w-6xl items-stretch gap-12 px-5 lg:grid-cols-2">
+            <div className="order-2 h-full overflow-hidden rounded-3xl shadow-soft lg:order-1">
               <img
                 src={lighting}
                 alt="Instalação de iluminação e eletrodutos em ambiente comercial"
                 width={1280}
                 height={960}
                 loading="lazy"
-                className="h-full w-full object-cover"
+                className="h-64 w-full object-cover sm:h-80 lg:h-full lg:min-h-full"
               />
             </div>
             <div className="order-1 lg:order-2">

@@ -132,7 +132,7 @@ const testimonials = [
 const faqs = [
   {
     q: "Vocês atendem emergências?",
-    a: "Sim, realizamos atendimentos urgentes dentro do nosso horário de atendimento.",
+    a: "Sim, realizamos atendimentos urgentes. Chame no WhatsApp e informe o que está acontecendo.",
   },
   {
     q: "O serviço tem garantia?",

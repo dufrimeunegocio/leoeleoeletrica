@@ -18,7 +18,6 @@ import {
   Sparkles,
   Wallet,
   Wrench,
-  Zap,
 } from "lucide-react";
 
 import logo from "@/assets/logo.png";
@@ -26,7 +25,22 @@ import logo from "@/assets/logo.png";
 import lighting from "@/assets/section-lighting.jpg";
 import { Header } from "@/components/site/Header";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
-import { INSTAGRAM_URL, PHONE_DISPLAY, whatsappLink } from "@/lib/site";
+import { INSTAGRAM_URL, PHONE_DISPLAY, PHONE_E164, SITE_URL, trackWhatsAppClick, whatsappLink } from "@/lib/site";
+import servico1 from "@/assets/servico-1.webp.asset.json";
+import servico2 from "@/assets/servico-2.webp.asset.json";
+import servico3 from "@/assets/servico-3.webp.asset.json";
+import servico4 from "@/assets/servico-4.webp.asset.json";
+import servico5 from "@/assets/servico-5.webp.asset.json";
+import servico6 from "@/assets/servico-6.webp.asset.json";
+
+const gallery = [
+  { src: servico1.url, alt: "Instalação de iluminação linear em teto de drogaria — serviço comercial" },
+  { src: servico2.url, alt: "Medição de tensão em interruptor durante manutenção elétrica residencial" },
+  { src: servico3.url, alt: "Quadro de proteção instalado com IDR, disjuntor e DPS" },
+  { src: servico4.url, alt: "Carregador de veículo elétrico instalado em parede" },
+  { src: servico5.url, alt: "Quadro de distribuição com disjuntores e DPS organizado" },
+  { src: servico6.url, alt: "Fechadura eletrônica instalada em porta" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,7 +58,54 @@ export const Route = createFileRoute("/")({
           "Serviços elétricos residenciais, comerciais e industriais com segurança, qualidade e atendimento profissional em Guarulhos e região.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:site_name", content: "Leo e Leo Elétrica" },
+      { property: "og:locale", content: "pt_BR" },
+      { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Eletricista em Guarulhos | Leo e Leo Elétrica" },
+      {
+        name: "twitter:description",
+        content:
+          "Serviços elétricos residenciais, comerciais, industriais e prediais em Guarulhos e Grande São Paulo.",
+      },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
+    ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Electrician",
+          name: "Leo e Leo Elétrica",
+          url: `${SITE_URL}/`,
+          logo: `${SITE_URL}/favicon.png`,
+          image: `${SITE_URL}/og-image.jpg`,
+          telephone: PHONE_E164,
+          description:
+            "Serviços elétricos residenciais, comerciais, industriais e prediais em Guarulhos e Grande São Paulo.",
+          areaServed: [
+            { "@type": "City", name: "Guarulhos" },
+            { "@type": "AdministrativeArea", name: "Grande São Paulo" },
+          ],
+          sameAs: [INSTAGRAM_URL],
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Serviços elétricos",
+            itemListElement: [
+              "Elétrica residencial",
+              "Elétrica comercial",
+              "Elétrica industrial",
+              "Elétrica predial",
+              "Manutenção elétrica",
+            ].map((name) => ({
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name },
+            })),
+          },
+        }),
+      },
     ],
   }),
   component: Index,
@@ -192,6 +253,7 @@ function Index() {
                 href={whatsappLink(mainMsg)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("hero")}
                 className="mt-9 inline-flex w-full items-center justify-center gap-2 rounded-full bg-cyan px-8 py-4 text-base font-bold uppercase tracking-wide text-navy-deep shadow-glow transition-transform hover:-translate-y-0.5 sm:w-auto sm:text-lg"
               >
                 <MessageCircle className="h-5 w-5" aria-hidden />
@@ -246,6 +308,7 @@ function Index() {
                 href={whatsappLink(s.msg)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("servico")}
                 className="group flex flex-col rounded-2xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-cyan/50 hover:shadow-lift"
               >
                 <span className="grid h-12 w-12 place-items-center rounded-xl bg-navy text-primary-foreground transition-colors group-hover:bg-cyan group-hover:text-navy-deep">
@@ -313,21 +376,24 @@ function Index() {
               Serviços realizados
             </h2>
             <p className="mt-4 text-base text-muted-foreground">
-              Galeria reservada para fotos reais dos trabalhos executados pela Leo e Leo Elétrica.
-              As imagens serão publicadas em breve.
+              Fotos reais de instalações, quadros elétricos, iluminação e manutenções executadas
+              pela Leo e Leo Elétrica em Guarulhos e Grande São Paulo.
             </p>
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+            {gallery.map((g) => (
               <div
-                key={i}
-                className="flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-border bg-surface text-center"
+                key={g.src}
+                className="aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-surface"
               >
-                <Zap className="h-6 w-6 text-muted-foreground/50" aria-hidden />
-                <p className="px-6 text-xs font-medium text-muted-foreground/70">
-                  Espaço reservado para foto real do serviço
-                </p>
+                <img
+                  src={g.src}
+                  alt={g.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
               </div>
             ))}
           </div>
@@ -362,6 +428,7 @@ function Index() {
                 href={whatsappLink(mainMsg)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("regiao")}
                 className="mt-6 flex items-center justify-center gap-2 rounded-full bg-whats px-5 py-3.5 text-sm font-semibold text-whats-foreground transition-transform hover:-translate-y-0.5"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden />
@@ -414,6 +481,7 @@ function Index() {
                 href={whatsappLink(mainMsg)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("faq")}
                 className="mt-6 inline-flex items-center gap-2 rounded-full border border-navy/20 bg-card px-5 py-3 text-sm font-semibold text-navy transition-colors hover:border-cyan hover:text-cyan"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden />
@@ -452,6 +520,7 @@ function Index() {
               href={whatsappLink(mainMsg)}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("cta_final")}
               className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-whats px-8 py-5 text-base font-bold text-whats-foreground shadow-lift transition-transform hover:-translate-y-0.5 sm:w-auto sm:text-lg"
             >
               <MessageCircle className="h-5 w-5" aria-hidden />
@@ -479,9 +548,7 @@ function Index() {
             <ul className="mt-4 space-y-3 text-sm text-primary-foreground/70">
               <li>
                 <a
-                  href={whatsappLink(mainMsg)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`tel:${PHONE_E164}`}
                   className="inline-flex items-center gap-2 transition-colors hover:text-cyan"
                 >
                   <Phone className="h-4 w-4" aria-hidden />

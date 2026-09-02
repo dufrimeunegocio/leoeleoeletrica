@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { MessageCircle, Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
-import { whatsappLink } from "@/lib/site";
+import { trackWhatsAppClick, whatsappLink } from "@/lib/site";
 
 const links = [
   { href: "#servicos", label: "Serviços" },
@@ -50,6 +50,7 @@ export function Header() {
             href={whatsappLink("Olá, preciso de um eletricista!")}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick("header")}
             className="hidden items-center gap-2 rounded-full bg-whats px-4 py-2.5 text-sm font-semibold text-whats-foreground shadow-soft transition-transform hover:-translate-y-0.5 sm:inline-flex"
           >
             <MessageCircle className="h-4 w-4" aria-hidden />
@@ -82,6 +83,7 @@ export function Header() {
             href={whatsappLink("Olá, preciso de um eletricista!")}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick("menu_mobile")}
             className="mt-4 flex items-center justify-center gap-2 rounded-full bg-whats px-4 py-3 text-sm font-semibold text-whats-foreground"
           >
             <MessageCircle className="h-4 w-4" aria-hidden />
